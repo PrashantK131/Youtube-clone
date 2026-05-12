@@ -57,7 +57,7 @@ export const getVideoById = async (req, res) => {
         const video = await Video.findByIdAndUpdate(
         req.params.id,
         { $inc: { views: 1 } },
-        { new: true }
+        { returnDocument: 'after' }
         ).populate('user', 'channelName profilePic userName createdAt about');
 
         if (!video) return res.status(404).json({ error: 'Video not found' });
@@ -98,7 +98,7 @@ export const updateVideo = async (req, res) => {
         const updated = await Video.findByIdAndUpdate(
         req.params.id,
         { title, description, videoLink, thumbnail, videoType },
-        { new: true, runValidators: true }
+        { returnDocument: 'after', runValidators: true }
         ).populate('user', 'channelName profilePic userName');
 
         return res.status(200).json({ success: true, video: updated });
