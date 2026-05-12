@@ -1,0 +1,48 @@
+/* CSS Custom Properties */
+:root {
+  --navbar-h:      56px;
+  --sidebar-open:  240px;
+  --sidebar-mini:  90px;    
+  --bg:            #0f0f0f;
+  --bg-card:       #1a1a1a;
+  --bg-hover:      #272727;
+  --border:        #282828;
+  --text:          #fff;
+  --text-muted:    #aaa;
+  --accent:        #3ea6ff;
+  --red:           #ff0000;
+  --radius:        12px;
+  --transition:    0.2s ease;
+}
+
+/* App shell  */
+.app {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.app-body {
+  display: flex;
+  padding-top: var(--navbar-h);
+}
+
+.app-main {
+  flex: 1;
+  min-height: calc(100vh - var(--navbar-h));
+  min-width: 0;
+  transition: margin-left 0.2s ease;
+}
+
+/* ── Desktop — sidebar is always visible (open or mini rail) ─────────────
+   open (with-sidebar) or collapsed (!with-sidebar) 
+*/
+@media (min-width: 769px) {
+  .app-main.with-sidebar     { margin-left: var(--sidebar-open); }
+  .app-main:not(.with-sidebar) { margin-left: var(--sidebar-mini); }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .app-main,
+  .app-main.with-sidebar { margin-left: 0; }
+}
