@@ -1,0 +1,177 @@
+.home { padding-top: 0; }
+
+/* ── Filter chips ───────────────────────────────────────────────────────── */
+.home-filters {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg, #0f0f0f);
+  display: flex;
+  gap: 8px;
+  padding: 10px 16px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.home-filters::-webkit-scrollbar { 
+    display: none; 
+}
+
+.home-filter-chip {
+  flex-shrink: 0;
+  padding: 6px 14px;
+  background: #272727;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+  font-family: inherit;
+}
+.home-filter-chip:hover  { 
+    background: #3d3d3d; 
+}
+.home-filter-chip.active { 
+    background: #fff; color: #0f0f0f; 
+}
+
+/* ── Search banner ──────────────────────────────────────────────────────── */
+.home-search-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 20px 12px;
+  border-bottom: 1px solid #1e1e1e;
+  margin-bottom: 4px;
+}
+.home-search-banner p {
+  font-size: 14px;
+  color: #ccc;
+}
+.home-search-banner strong {
+  color: #fff;
+}
+.home-search-count {
+  color: #aaa;
+  font-weight: 400;
+}
+.home-clear-search {
+  background: none;
+  border: none;
+  color: #3ea6ff;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: inherit;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+.home-clear-search:hover {
+  background: rgba(62, 166, 255, 0.1);
+  text-decoration: underline;
+}
+
+/* ── Grid wrapper ───────────────────────────────────────────────────────── */
+.home-grid-wrapper { 
+    padding: 4px 16px 32px; 
+}
+
+/* ── Video grid — fluid columns ─────────────────────────────────────────── */
+.home-grid {
+  display: grid;
+  gap: 20px 12px;
+  /* 4 columns on wide desktop */
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* 3 columns — large tablet / small desktop */
+@media (max-width: 1280px) {
+  .home-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* 2 columns — tablet */
+@media (max-width: 900px) {
+  .home-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 16px 10px; 
+  }
+}
+
+/* 1 column — mobile */
+@media (max-width: 500px) {
+  .home-grid { 
+    grid-template-columns: 1fr; 
+    gap: 12px 0; 
+  }
+  .home-grid-wrapper { 
+    padding: 4px 8px 24px; 
+  }
+}
+
+/* ── Empty state ────────────────────────────────────────────────────────── */
+.home-empty {
+  text-align: center;
+  padding: 80px 24px;
+  color: #aaa;
+}
+.home-empty p { 
+    font-size: 18px; 
+    margin-bottom: 16px; 
+}
+
+/* ── Loading skeletons (match grid) ────────────────────────────────────── */
+.home-loading {
+  display: grid;
+  gap: 20px 12px;
+  grid-template-columns: repeat(4, 1fr);
+}
+@media (max-width: 1280px) { 
+    .home-loading { grid-template-columns: repeat(3, 1fr); } 
+}
+@media (max-width: 900px) { 
+    .home-loading { grid-template-columns: repeat(2, 1fr); } 
+}
+@media (max-width: 500px) { 
+    .home-loading { grid-template-columns: 1fr; } 
+}
+
+.home-skeleton { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px; 
+}
+
+.skeleton-thumb {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #1a1a1a 25%, #242424 50%, #1a1a1a 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+.skeleton-info  { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 8px; 
+    padding: 0 2px; 
+}
+.skeleton-line  {
+  height: 13px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #1a1a1a 25%, #242424 50%, #1a1a1a 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+.skeleton-line.short { 
+    width: 55%; 
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
