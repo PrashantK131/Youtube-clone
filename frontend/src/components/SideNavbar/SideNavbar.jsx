@@ -26,17 +26,17 @@ import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 import { useAuth } from '../../context/AuthContext.jsx';
 import './SideNavbar.css';
 
-/* ── Single nav item — two layouts: full (open) and mini (collapsed) ─── */
+// Single nav item — two layouts: full (open) and mini (collapsed) 
 const NavItem = ({ icon, iconActive, label, to, open, onClick }) => {
     const location = useLocation();
     const isActive = location.pathname === '/' && to === '/'
-        ? !location.search  // home is only active when no query params
+        ? !location.search  
         : location.pathname + location.search === to;
 
     const activeIcon = iconActive || icon;
 
     if (!open) {
-        /* ── Mini (collapsed) layout ─── */
+        /* Mini (collapsed) layout */
         return (
             <Link to={to} className={`sidenav-mini-item ${isActive ? 'active' : ''}`} title={label} onClick={onClick}>
                 <span className="sidenav-mini-icon">{isActive ? activeIcon : icon}</span>
@@ -45,7 +45,7 @@ const NavItem = ({ icon, iconActive, label, to, open, onClick }) => {
         );
     }
 
-    /* ── Full (open) layout ─── */
+    /* Full (open) layout */
     return (
         <Link to={to} className={`sidenav-item ${isActive ? 'active' : ''}`} onClick={onClick}>
             <span className="sidenav-icon">{isActive ? activeIcon : icon}</span>
@@ -54,15 +54,15 @@ const NavItem = ({ icon, iconActive, label, to, open, onClick }) => {
     );
 };
 
-/* ── Section divider (only in open mode) ─────────────────────────────── */
+/* Section divider (only in open mode) */
 const Divider = () => <div className="sidenav-divider" />;
 
-/* ── Section heading (only in open mode) ─────────────────────────────── */
+/* Section heading (only in open mode) */
 const SectionTitle = ({ children }) => (
     <p className="sidenav-section-title">{children}</p>
 );
 
-/* ── Main component ──────────────────────────────────────────────────── */
+/* Main component */
 const SideNavbar = ({ open, onClose }) => {
     const { user } = useAuth();
     const location = useLocation();
@@ -89,7 +89,7 @@ const SideNavbar = ({ open, onClose }) => {
 
             <aside className={`sidenav ${open ? 'sidenav-open' : 'sidenav-collapsed'}`}>
 
-                {/* ── MAIN ─────────────────────────────────────────────────── */}
+                {/* MAIN */}
                 <NavItem open={open} icon={<HomeOutlinedIcon sx={{ fontSize: SIZE }} />} iconActive={<HomeIcon sx={{ fontSize: SIZE }} />} label="Home" to="/" />
 
                 <NavItem open={open} icon={<VideocamIcon sx={{ fontSize: SIZE }} />} label="Shorts" to="/" />
@@ -98,7 +98,7 @@ const SideNavbar = ({ open, onClose }) => {
 
                 {open && <Divider />}
 
-                {/* ── YOU ──────────────────────────────────────────────────── */}
+                {/* YOU */}
                 {open && user && <SectionTitle>You</SectionTitle>}
 
                 {user && <>
@@ -111,7 +111,7 @@ const SideNavbar = ({ open, onClose }) => {
 
                 {open && <Divider />}
 
-                {/* ── EXPLORE ──────────────────────────────────────────────── */}
+                {/* EXPLORE */}
                 {open && <SectionTitle>Explore</SectionTitle>}
 
                 <NavItem open={open} icon={<TrendingUpIcon sx={{ fontSize: SIZE }} />} label="Trending" to="/?category=All" />

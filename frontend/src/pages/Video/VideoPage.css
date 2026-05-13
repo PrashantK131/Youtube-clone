@@ -1,4 +1,4 @@
-/* ── Two-column layout ─────────────────────────────────────────────────────── */
+/* Two-column layout */
 .vp-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 402px;
@@ -8,7 +8,7 @@
   margin: 0 auto;
 }
 
-/* ── Loading skeletons ────────────────────────────────────────────────────── */
+/* Loading skeletons */
 .vp-left {
   display: flex;
   flex-direction: column;
@@ -47,7 +47,7 @@
   100% { background-position:  200% 0; }
 }
 
-/* ── Player ──────────────────────────────────────────────────────────────── */
+/* Player */
 .vp-player-wrapper {
   width: 100%;
   border-radius: 12px;
@@ -61,7 +61,7 @@
   display: block;
 }
 
-/* ── Title ───────────────────────────────────────────────────────────────── */
+/* Title */
 .vp-title {
   font-size: 20px;
   font-weight: 600;
@@ -69,7 +69,7 @@
   color: #fff;
 }
 
-/* ── Meta row ────────────────────────────────────────────────────────────── */
+/* Meta row */
 .vp-meta-row {
   display: flex;
   align-items: center;
@@ -121,7 +121,7 @@
     opacity: 0.85; 
 }
 
-/* Action bar — like pill + share */
+/* Action bar */
 .vp-action-bar {
   display: flex;
   align-items: center;
@@ -178,7 +178,7 @@
     background: #383838; 
 }
 
-/* ── Description ─────────────────────────────────────────────────────────── */
+/* Description */
 .vp-description {
   background: #272727;
   border-radius: 12px;
@@ -365,7 +365,7 @@
     color: #ff4444; 
 }
 
-/* ── Right column — recommended ──────────────────────────────────────────── */
+/* Right column */
 .vp-right {
   display: flex;
   flex-direction: column;
@@ -444,14 +444,14 @@
     color: #aaa; 
 }
 
-/* ── Responsive ──────────────────────────────────────────────────────────── */
+/* Responsive */
 
-/* Large tablet — narrow right column */
+/* Large tablet */
 @media (max-width: 1280px) {
   .vp-layout { grid-template-columns: minmax(0, 1fr) 340px; }
 }
 
-/* Tablet — stack to single column, recommended goes below */
+/* Tablet */
 @media (max-width: 1024px) {
   .vp-layout {
     grid-template-columns: 1fr;

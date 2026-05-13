@@ -1,4 +1,4 @@
-/* ── Base ───────────────────────────────────────────────────────────────── */
+/* Base */
 .navbar {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -12,7 +12,6 @@
   gap: 8px;
 }
 
-/* ── Left ───────────────────────────────────────────────────────────────── */
 .navbar-left {
   display: flex;
   align-items: center;
@@ -33,7 +32,7 @@
   white-space: nowrap;
 }
 
-/* ── Shared icon button ─────────────────────────────────────────────────── */
+/* Shared icon button */
 .navbar-icon-btn {
   width: 40px;
   height: 40px;
@@ -52,7 +51,7 @@
     background: rgba(255,255,255,0.1); 
 }
 
-/* ── Middle — desktop search ────────────────────────────────────────────── */
+/* Middle — desktop search */
 .navbar-middle {
   display: flex;
   align-items: center;
@@ -62,7 +61,7 @@
   margin: 0 auto;
 }
 
-/* ── Search bar ─────────────────────────────────────────────────────────── */
+/* Search bar */
 
 .navbar-search-wrapper {
   display: flex;
@@ -167,7 +166,6 @@
 }
 .navbar-mic-btn:hover { background: #333; }
 
-/* ── Right ──────────────────────────────────────────────────────────────── */
 .navbar-right {
   display: flex;
   align-items: center;
@@ -265,7 +263,7 @@
     background: rgba(62,166,255,0.1); 
 }
 
-/* ── Mobile search overlay ──────────────────────────────────────────────── */
+/* Mobile search overlay */
 .navbar-mobile-search {
   position: absolute;
   top: 0; left: 0; right: 0;
@@ -305,7 +303,7 @@
   background: transparent;
 }
 
-/* ── Responsive ─────────────────────────────────────────────────────────── */
+/* Responsive */
 @media (max-width: 768px) {
   .navbar-mic-btn { display: none; }
   .navbar-middle  { max-width: 100%; }

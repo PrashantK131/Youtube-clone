@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const AuthContext = createContext(null);
 
-/* ── JWT decode (no library needed — just base64) ─────────────────────────── */
+/* JWT decode (no library needed — just base64) */
 const decodeToken = (token) => {
     try {
         const payload = token.split('.')[1];
@@ -20,7 +20,7 @@ const isTokenExpired = (token) => {
     return decoded.exp * 1000 < Date.now() + 10_000;
 };
 
-/* ── Storage helpers (centralised keys) ───────────────────────────────────── */
+/* Storage helpers (centralised keys) */
 const KEYS = { user: 'ytUser', token: 'ytToken', rememberMe: 'ytRememberMe' };
 
 const saveToStorage = (userData, token, rememberMe) => {
@@ -52,7 +52,7 @@ const readFromStorage = () => {
     catch { clearStorage(); return null; }
 };
 
-/* ── Provider ─────────────────────────────────────────────────────────────── */
+/* Provider */
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);

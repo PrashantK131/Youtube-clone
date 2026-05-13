@@ -30,7 +30,7 @@ const formatViews = (views) => {
     return String(views);
 };
 
-// ─── Recommended Video Card 
+// Recommended Video Card 
 const RecommendedCard = ({ video }) => (
     <Link to={`/watch/${video._id}`} className="rec-card">
         <div className="rec-thumb-wrapper">
@@ -51,7 +51,7 @@ const RecommendedCard = ({ video }) => (
     </Link>
 );
 
-// ─── Main Component ───────────────────────────────────────────────────────────
+// Main Component 
 const VideoPage = () => {
     const { id } = useParams();
     const { user } = useAuth();
@@ -205,7 +205,7 @@ const VideoPage = () => {
         toast.success('Link copied to clipboard!');
     };
 
-    // ── Loading skeleton ──
+    // Loading skeleton
     if (loadingVideo) {
         return (
             <div className="vp-layout">
@@ -230,7 +230,7 @@ const VideoPage = () => {
 
     return (
         <div className="vp-layout">
-            {/* ── LEFT COLUMN — player + info + comments ── */}
+            {/* LEFT COLUMN — player + info + comments */}
             <div className="vp-left">
 
                 {/* Player */}
@@ -398,7 +398,7 @@ const VideoPage = () => {
                 </div>
             </div>
 
-            {/* ── RIGHT COLUMN — recommended videos ── */}
+            {/* RIGHT COLUMN — recommended videos */}
             <div className="vp-right">
                 <h3 className="vp-rec-title">Up Next</h3>
                 <div className="vp-rec-list">

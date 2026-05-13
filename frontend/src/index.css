@@ -1,4 +1,4 @@
-/* ── Reset & base ───────────────────────────────────────────────────────── */
+/* Reset & base */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -20,7 +20,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ── Scrollbar ──────────────────────────────────────────────────────────── */
+/* Scrollbar */
 ::-webkit-scrollbar { 
   width: 6px; 
   height: 6px; 
@@ -36,7 +36,7 @@ body {
   background: #666; 
 }
 
-/* ── Base elements ──────────────────────────────────────────────────────── */
+/* Base elements */
 a {
   text-decoration: none;
   color: inherit;
@@ -55,8 +55,7 @@ input, textarea, select {
   color: inherit;
 }
 
-/* Remove all browser-default focus rings from inputs globally.
-   Each component applies its own styled focus indicator on the wrapper. */
+/* Remove all browser-default focus rings from inputs globally. Each component applies its own styled focus indicator on the wrapper. */
 input:focus,
 textarea:focus,
 select:focus {
@@ -69,13 +68,13 @@ img {
   max-width: 100%;
 }
 
-/* ── Focus visible (accessibility) ─────────────────────────────────────── */
+/* Focus visible (accessibility) */
 :focus-visible {
   outline: 2px solid #3ea6ff;
   outline-offset: 2px;
 }
 
-/* ── Touch targets — min 44px on mobile (WCAG) ──────────────────────────── */
+/* Touch targets — min 44px on mobile (WCAG) */
 @media (max-width: 768px) {
   button, a, [role="button"] {
     min-height: 44px;
@@ -90,7 +89,7 @@ img {
   }
 }
 
-/* ── Utility: visually hidden (screen-reader only) ──────────────────────── */
+/* Utility: visually hidden (screen-reader only) */
 .sr-only {
   position: absolute;
   width: 1px; 

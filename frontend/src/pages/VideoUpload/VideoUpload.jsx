@@ -11,7 +11,7 @@ const CATEGORIES = [
   'Education', 'Science & Technology', 'Travel', 'Comedy', 'Live',
 ];
 
-/* ── Field-level validation ─────────────────────────────────────────────── */
+/* Field-level validation */
 const validateField = (name, value) => {
     switch (name) {
         case 'title':

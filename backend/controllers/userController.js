@@ -9,7 +9,7 @@ const cookieOptions = {
     maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
 };
 
-/* ─── Validation Helpers ──────────────────────────────────────────────────── */
+/* Validation Helpers */
 const EMAIL_RE    = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const USERNAME_RE = /^[a-zA-Z0-9_]+$/;          // alphanumeric + underscore only
 
@@ -51,7 +51,7 @@ const validateSignUp = ({ channelName, userName, email, password }) => {
     return errors;
 };
 
-/* ─── POST /auth/signup ───────────────────────────────────────────────────── */
+/* POST /auth/signup */
 export const signUp = async (req, res) => {
     try {
         const { channelName, userName, email, password, about, profilePic } = req.body;
@@ -98,7 +98,7 @@ export const signUp = async (req, res) => {
     }
 };
 
-/* ─── POST /auth/login ────────────────────────────────────────────────────── */
+/* POST /auth/login */
 export const signIn = async (req, res) => {
     try {
         const { userName, password } = req.body;
@@ -149,12 +149,12 @@ export const signIn = async (req, res) => {
     }
 };
 
-/* ─── POST /auth/logout ───────────────────────────────────────────────────── */
+/* POST /auth/logout */
 export const logout = async (req, res) => {
     res.clearCookie('token', cookieOptions).json({ success: true, message: 'Logged out successfully' });
 };
 
-/* ─── GET /auth/me ────────────────────────────────────────────────────────── */
+/* GET /auth/me */
 export const getMe = async (req, res) => {
     try {
         const user = await User.findById(req.user._id).select('-password');
@@ -164,7 +164,7 @@ export const getMe = async (req, res) => {
     }
 };
 
-/* ─── GET /auth/user/:id ──────────────────────────────────────────────────── */
+/* GET /auth/user/:id */
 export const getUserById = async (req, res) => {
     try {
         const user = await User.findById(req.params.id).select('-password');

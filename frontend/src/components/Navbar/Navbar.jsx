@@ -41,7 +41,7 @@ const Navbar = ({ toggleSideNav }) => {
         return () => document.removeEventListener('mousedown', handler);
     }, []);
 
-    /* Auto-focus mobile search input */
+    /* Auto-focus for mobile search input */
     useEffect(() => {
         if (mobileSearchOpen && mobileRef.current) mobileRef.current.focus();
     }, [mobileSearchOpen]);
@@ -54,7 +54,7 @@ const Navbar = ({ toggleSideNav }) => {
         if (searchRef.current) searchRef.current.blur();
     };
 
-    /* Clear button: wipe input AND remove ?search from URL */
+    /* Clear button */
     const clearSearch = (e) => {
         e.preventDefault();
         e.stopPropagation();
@@ -80,7 +80,7 @@ const Navbar = ({ toggleSideNav }) => {
     return (
         <nav className="navbar">
 
-            {/* ── Mobile search overlay ──────────────────────────────────── */}
+            {/* Mobile search overlay */}
             {mobileSearchOpen && (
                 <div className="navbar-mobile-search">
                     <button className="navbar-icon-btn" onClick={() => { setMobileSearchOpen(false); }} aria-label="Close search">
@@ -98,7 +98,7 @@ const Navbar = ({ toggleSideNav }) => {
                                 onChange={(e) => setSearchQuery(e.target.value)}
                                 aria-label="Search videos"
                             />
-                            {/* ✕ Clear button inside mobile input */}
+                            {/* ✕ Clear button for mobile input */}
                             {searchQuery && (
                                 <button type="button" className="navbar-clear-btn" onClick={clearSearch} aria-label="Clear search">
                                     <CloseIcon sx={{ fontSize: 20 }} />
@@ -116,7 +116,6 @@ const Navbar = ({ toggleSideNav }) => {
                 </div>
             )}
 
-            {/* ── Left ───────────────────────────────────────────────────── */}
             <div className="navbar-left">
                 <button className="navbar-icon-btn" onClick={toggleSideNav} aria-label="Toggle sidebar">
                     <MenuIcon sx={{ color: '#fff', fontSize: 24 }} />
@@ -127,7 +126,7 @@ const Navbar = ({ toggleSideNav }) => {
                 </Link>
             </div>
 
-            {/* ── Middle — desktop search ─────────────────────────────────── */}
+            {/* Middle — desktop search */}
             <form className="navbar-middle" onSubmit={handleSearch}>
                 <div className={`navbar-search-wrapper ${searchFocused ? 'focused' : ''}`}>
 
@@ -150,7 +149,7 @@ const Navbar = ({ toggleSideNav }) => {
                             type="button"
                             className="navbar-clear-btn"
                             onClick={clearSearch}
-                            onMouseDown={(e) => e.preventDefault()} /* prevent input blur */
+                            onMouseDown={(e) => e.preventDefault()} 
                             aria-label="Clear search"
                             tabIndex={0}
                         >
@@ -170,7 +169,6 @@ const Navbar = ({ toggleSideNav }) => {
                 </button>
             </form>
 
-            {/* ── Right ──────────────────────────────────────────────────── */}
             <div className="navbar-right">
                 {/* Mobile search icon — shown only on small screens */}
                 <button className="navbar-icon-btn navbar-mobile-search-btn" onClick={() => setMobileSearchOpen(true)} aria-label="Search">

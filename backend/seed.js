@@ -1,6 +1,4 @@
-/*Seed Script — populates MongoDB with sample data for testing.
- *Run: node seed.js
- */
+/* Seed script — populates MongoDB with sample data for testing. */
 
 import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';
@@ -10,7 +8,7 @@ import { dirname, join } from 'path';
 
 dotenv.config();
 
-// ─── Models (inline to keep seed self-contained) ─────────────────────────────
+// Models (inline to keep seed self-contained) 
 const userSchema = new mongoose.Schema(
     {
         channelName: String,
@@ -50,7 +48,7 @@ const commentSchema = new mongoose.Schema(
 );
 const Comment = mongoose.model('Comment', commentSchema);
 
-// ─── Seed Data ────────────────────────────────────────────────────────────────
+// Seed Data 
 const AVATARS = [
     'https://i.pravatar.cc/150?img=1',
     'https://i.pravatar.cc/150?img=2',
@@ -101,7 +99,7 @@ const videosData = [
     { title: 'Stand-Up Comedy Special',           description: 'Hilarious stand-up set — warning: you will laugh.',                 videoType: 'Comedy',    views: 73000 },
 ];
 
-// ─── Main ─────────────────────────────────────────────────────────────────────
+// Main 
 async function seed() {
     try {
         await mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/youtubeClone');

@@ -100,7 +100,7 @@ cd backend
 npm install
 ```
 
-Edit `.env` if you use MongoDB Atlas, we can update MONGO_URI and JWT_SECRET:
+Edit `.env` I have used MongoDB Atlas, we can also update MONGO_URI and JWT_SECRET:
 ```env
 PORT=4000
 MONGO_URI=mongodb+srv://rahulprashant2001_db_user:4Gva84mCauucaX0p@cluster0.d2db9p9.mongodb.net/?appName=Cluster0

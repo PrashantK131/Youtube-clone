@@ -1,6 +1,6 @@
 .home { padding-top: 0; }
 
-/* ── Filter chips ───────────────────────────────────────────────────────── */
+/* Filter chips */
 .home-filters {
   position: sticky;
   top: 0;
@@ -37,7 +37,7 @@
     background: #fff; color: #0f0f0f; 
 }
 
-/* ── Search banner ──────────────────────────────────────────────────────── */
+/* Search banner */
 .home-search-banner {
   display: flex;
   align-items: center;
@@ -76,12 +76,12 @@
   text-decoration: underline;
 }
 
-/* ── Grid wrapper ───────────────────────────────────────────────────────── */
+/* Grid wrapper */
 .home-grid-wrapper { 
     padding: 4px 16px 32px; 
 }
 
-/* ── Video grid — fluid columns ─────────────────────────────────────────── */
+/* Video grid — fluid columns */
 .home-grid {
   display: grid;
   gap: 20px 12px;
@@ -113,7 +113,7 @@
   }
 }
 
-/* ── Empty state ────────────────────────────────────────────────────────── */
+/* Empty state */
 .home-empty {
   text-align: center;
   padding: 80px 24px;
@@ -124,7 +124,7 @@
     margin-bottom: 16px; 
 }
 
-/* ── Loading skeletons (match grid) ────────────────────────────────────── */
+/* Loading skeletons (match grid) */
 .home-loading {
   display: grid;
   gap: 20px 12px;

@@ -77,7 +77,7 @@
     font-size: 12px; color: #aaa; 
 }
 
-/* Mobile — smaller avatar, tighter padding */
+/* Mobile */
 @media (max-width: 500px) {
   .video-card-info   { 
         padding: 8px 0 2px; 

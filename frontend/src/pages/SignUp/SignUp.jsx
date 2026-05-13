@@ -9,7 +9,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import './SignUp.css';
 
-/* ── Validation rules ────────────────────────────────────────────────────── */
+/* Validation rules */
 const EMAIL_RE    = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const USERNAME_RE = /^[a-zA-Z0-9_]+$/;
 
@@ -44,7 +44,7 @@ const validateField = (name, value, allFields = {}) => {
     }
 };
 
-/* ── Password strength ───────────────────────────────────────────────────── */
+/* Password strength */
 const getPasswordStrength = (pw) => {
     if (!pw) return { score: 0, label: '', color: '' };
     let score = 0;
@@ -59,11 +59,7 @@ const getPasswordStrength = (pw) => {
     return { score, label: 'Strong', color: '#00c853' };
 };
 
-/* ─────────────────────────────────────────────────────────────────────────────
- * Field — defined OUTSIDE SignUp so React never remounts it on re-render.
- * If this were inside SignUp, every keystroke would recreate the component
- * type, causing the input to unmount/remount and lose focus after each letter.
- * ───────────────────────────────────────────────────────────────────────────*/
+/* Field — defined OUTSIDE SignUp so React never remounts it on re-render. */
 const Field = ({
     name, 
     label, 
@@ -100,7 +96,7 @@ const Field = ({
     </div>
 );
 
-/* ── Main component ──────────────────────────────────────────────────────── */
+/* Main component */
 const SignUp = () => {
     const [fields, setFields] = useState({
         channelName: '', 

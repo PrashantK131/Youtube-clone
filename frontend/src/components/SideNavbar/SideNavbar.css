@@ -1,6 +1,4 @@
-/* 
-   SideNavbar — matches YouTube's sidebar design
- */
+/* SideNavbar — matches YouTube's sidebar design */
 
 .sidenav {
   position: fixed;
@@ -44,9 +42,7 @@
   white-space: nowrap;
 }
 
-/* 
-   FULL ITEM  (open = true)
- */
+/* FULL ITEM  (open = true) */
 .sidenav-item {
   display: flex;
   align-items: center;
@@ -81,16 +77,14 @@
   text-overflow: ellipsis;
 }
 
-/* 
-   MINI ITEM like YouTube's mini sidebar
- */
+/* MINI ITEM like YouTube's mini sidebar */
 .sidenav-mini-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 5px;
-  width: 72px;       /* fixed 72px column centred in 90px rail */
+  width: 72px;       
   margin: 0 auto 4px;
   padding: 14px 4px 10px;
   border-radius: 10px;

@@ -20,10 +20,7 @@ const Home = () => {
     const searchQuery = searchParams.get('search')   || '';
     const categoryParam = searchParams.get('category') || 'All';
 
-    /*
-    * Sync active category chip with URL.
-    * When a search is active, reset category to "All", so that the search runs across all videos regardless of category.
-    */
+    /* Sync active category chip with URL.When a search is active, reset category to "All", so that the search runs across all videos regardless of category. */
     useEffect(() => {
         if (searchQuery) {
             setActiveCategory('All');
@@ -64,7 +61,7 @@ const Home = () => {
     return (
         <div className="home">
 
-            {/* ── Filter chips ─────────────────────────────────────────────── */}
+            {/* Filter chips */}
             <div className="home-filters">
                 {CATEGORIES.map((cat) => (
                     <button key={cat} className={`home-filter-chip ${(searchQuery ? cat === 'All' : cat === activeCategory) ? 'active' : ''}`} onClick={() => handleCategoryClick(cat)}>
@@ -73,7 +70,7 @@ const Home = () => {
                 ))}
             </div>
 
-            {/* ── Active search banner ─────────────────────────────────────── */}
+            {/* Active search banner */}
             {searchQuery && (
                 <div className="home-search-banner">
                     <p> Results for <strong>"{searchQuery}"</strong>
@@ -87,7 +84,7 @@ const Home = () => {
                 </div>
             )}
 
-            {/* ── Video grid ───────────────────────────────────────────────── */}
+            {/* Video grid */}
             <div className="home-grid-wrapper">
                 {loading ? (
                 <div className="home-loading">
